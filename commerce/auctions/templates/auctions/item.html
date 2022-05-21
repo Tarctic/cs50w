@@ -1,0 +1,86 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="d-flex">
+    <div class="p-2">
+        <h1><strong>{{title}} </strong></h1>
+        <h5>Starting at ${{price}}</h5>
+        Created by <u>{{owner}}</u> on {{date}}
+    </div>
+    <a href="{% url 'index' %}" style="position: absolute; top: 124px; right: 90px; font-size: 15px;"><u>Back</u></a>
+    <div style=" position: absolute; top: 115px; right: 150px">
+        <form action="{% url 'item' id %}" method="POST">
+        {% csrf_token %}
+        {% if watch %}
+        <button class="blue" name="wish_list" value="wishlist" style="width:160px; height:40px;">
+            Add to Watchlist
+        </button>
+        {% endif %}
+    </div>
+</div>
+<hr>
+<div class="d-flex flex-column">
+    <div class="p-2">
+        <div class="d-flex flex-row">
+            <div class="p-2">
+                <img src={{img}} width="500" alt="Image not available">
+            </div>
+            <div class="p-2">
+                <div style="padding-left: 20px">
+                    <h4>About:</h4>
+                    <p style="font-size: 15px;" class="newline">{{desc}}</p>
+                    {% if active %}
+                    <h5>Current Price: ${{bidnow}}</h5>
+                    {% if watch %}
+                    <input type="number" step="0.01" name='newbid' placeholder="${{bidnow}}" id="newbid">
+                    <button class="blue" type="submit" style="width:80px; height:35px;">Bid</button>
+                    {% endif %}
+                    {% endif %}
+                <hr>
+                <div>
+                    {% if active and close %}
+                    <button class="blue" name="close" value="closed" style="height: 35px; width: 150px;">Close Auction</button>
+                    {% endif %}
+                </div>
+                <div>
+                    {% if win %}
+                    <h3>You are the winner of this auction!</h3>
+                    <h4>Your bid: ${{bidnow}}</h4>
+                    {% elif win == False %}
+                    <h4>This auction has been closed.</h4>
+                    {% endif %}
+                    
+                    <br>
+                    
+                    {% if own %}
+                    <h5>The winner of the auction is {{winner}}</h5>
+                    <h5>Bid: ${{bidnow}}</h5>
+                    {% endif %}
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="p-2">
+        <h4>Comments</h4>
+        <hr>
+        {% if watch %}
+            <textarea name="msg" type="text" placeholder="Type your comment here..." id="comment"></textarea>
+            <br>
+            <input type="submit">
+        {% endif %}
+        </form>
+    </div>
+    <br>
+    <div class="p-2">
+        {% for comment in comments %}
+        <h5>{{comment.commenter}}</h5>
+        <p style="font-size: smaller; -webkit-text-fill-color: grey;">{{comment.creation}}</p>
+        <p>{{comment.msg}}</p>
+        <hr color="grey">
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

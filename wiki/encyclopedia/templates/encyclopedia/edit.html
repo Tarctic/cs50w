@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page
+{% endblock %}
+
+{% block nav %}
+( Tip : Use 
+<a href="https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">markdown</a>
+)
+{% endblock %}
+
+{% block body %}
+    <p></p>
+    <h4>Enter Title</h4>
+    <form action="{% url 'wiki:edit' title %}" method="POST">
+        {% csrf_token %}
+        <textarea type="text" name="title" placeholder="Title" style="height: 30px; width: 600px">{{title|safe}}</textarea>
+        <p></p>
+        <h5>Enter Information</h5>
+        <textarea type="text" name="info" style="height: 200px; width: 600px">{{info|safe}}</textarea>
+        <p></p>
+        <input type="submit">
+    </form>
+{% endblock %}

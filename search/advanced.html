@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Google Advanced Search</title>
+        <style>
+            h2{
+                position: absolute;
+                top: 65px;
+                left: 40.5px;
+                -webkit-text-fill-color: rgb(212, 45, 45);
+                font-family: arial, sans-serif;
+                font-size: 18px;
+                font-weight: normal;
+            }
+
+            a{
+                position: absolute;
+                top: 40px;
+                left: 1070px;
+                font-size: 20px;
+                font-family: arial, sans-serif;
+                text-decoration: none;
+                -webkit-text-fill-color: rgb(102, 102, 102);
+            }
+
+            div>div{
+                position: absolute;
+                top: 179px;
+                left: 16px;
+                width: 200px;
+            }
+
+            div>p{
+                font-family: arial, sans-serif;
+                font-size: 11.8px;
+                -webkit-text-fill-color:rgb(31, 30, 30);
+                margin: 24px;
+                line-break: auto;
+            }
+            
+            input{
+                margin: 6.5px;
+                line-break: auto;
+                width: 496px;
+                height: 22px;
+                border: 0.5px solid rgb(199, 199, 199);
+                font-size: 12px;
+                padding: 1px 8px;
+                border-radius: 0px;
+                
+            }
+
+            input:focus{
+                outline: 1px solid rgb(65, 130, 244);
+            }
+        
+            form{
+                position: absolute;
+                top: 190px;
+                left: 198px;
+                display: flex;
+                flex-wrap: wrap;
+                width: 700px;
+            }
+            
+            #box{
+                position: absolute;
+                top: 160px;
+                left: 407px;
+                background: rgb(61, 130, 244);
+                -webkit-text-fill-color: white;
+                font-family: arial, sans-serif;
+                font-size: 10px;
+                font-weight: bold;
+                border-radius: 2px;
+                border: 0.5px solid rgb(55, 120, 234);
+                width: 105px;
+                height: 27px;
+            }
+
+            #box:hover{
+                background-color: rgb(51, 120, 234);
+            }
+        </style>
+	</head>
+	<body>
+        <img src="googlelogo.png" alt="Google" width="65"
+        style="
+        position: absolute;
+        top: 20px;
+        left: 18px;
+        ">
+        <h2>Advanced Search</h2>
+        <a href="googlebasic.html">Back to Google</a>
+        <p style="
+        -webkit-text-fill-color:rgb(240, 238, 238);
+        position: absolute;
+        top: 90px;
+        left: 0px;
+        ">____________________________________________________________________________________________________________________________________________________________________________</p>
+        <div>
+            <p style="
+            position: absolute;
+            top: 141px;
+            left: 16px;
+            width: 200px;
+            font-size: 14.5px;
+            ">Find pages with...</p>
+            <div>
+                <p>all these words:</p>
+                <p>this exact word or phrase:</p>
+                <p>any of these words:</p>
+                <p>none of these words:</p>
+            </div>
+            <form action="https://google.com/search?as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&as_filetype=&tbs=&safe=active&">
+                <input type="text" name="as_q" >
+                <input type="text" name="as_epq">
+                <input type="text" name="as_oq">
+                <input type="text" name="as_eq">
+                <input type="submit" id="box" value="Advanced Search">
+            </form>
+        </div>
+	</body>
+</html>
+

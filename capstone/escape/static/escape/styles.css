@@ -1,0 +1,360 @@
+body {
+    max-width: 100%;
+    background-color: rgb(73, 72, 72);
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+}
+
+/* start menu */
+
+.startbg{
+    background: url('images/start.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 800px;
+}
+
+.center{
+    position: relative;
+    top: 120px;
+    left: 450px;
+    width: 140px;
+}
+
+.bt{
+    border: 1px solid black;
+    background-color: aliceblue;
+    border-radius: 5px;
+    font-family: 'Games', sans-serif;
+    margin-bottom: 25px;
+}
+
+
+.window{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 50px;
+    width: 680px;
+    height: 420px;
+    background-color: rgb(209, 196, 233);
+    border: 4px solid black;
+    padding: 30px;
+    align-items: center;
+}
+
+.windowtext{
+    font-family: 'VT323', monospace;
+    font-size: larger;
+}
+
+.backbtn{
+    position: absolute;
+    top: 340px;
+    left: 560px;
+    background-color: rgb(209, 196, 233);
+    border: solid 2px black;
+    font-size: large;
+    width: 84px;
+    font-family: 'VT323', monospace;
+    height: 40px;
+}
+
+h1, h4{
+    text-align: center;
+    font-family: 'VT323', monospace;
+}
+
+/* common for main and start */
+.outer{
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* main */
+
+/* inventory */
+.inv{
+    border: black solid 1px;
+    width: 515px;
+    height: 65px;
+    position: absolute;
+    margin: 0 auto;
+    padding: 5px;
+    top: 420px;
+    left: 130px;
+    background-color:rgb(138, 137, 137);
+}
+.inv-box{
+    border: black solid 1px;
+    width: 50px;
+    margin: 3px;
+    background-color: rgb(180, 180, 180);
+}
+
+.keyinv{
+    background-image: url('images/key.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.paperinv{
+    background-image: url('images/paper.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+}
+
+.h{
+    background-color: grey;
+}
+
+/* panel 1 */
+
+.bg1{
+    background: url('images/p1.png');
+}
+
+
+.text1{
+    top: 110px;
+    left: 520px;
+}
+
+.door1{
+    background-image: url('images/door1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 718px;
+    top: 136px;
+    height: 300px;
+    width: 50px;
+}
+
+.door2{
+    background-image: url('images/door2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 138px;
+    height: 300px;
+    width: 50px;
+}
+
+.clock{
+    background-image: url('images/clock.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 160px;
+    top: 70px;
+    height: 100px;
+    width: 100px;
+}
+
+
+.mc1{
+    left: 500px;
+    top: 130px;
+}
+
+.dustbin{
+    background-image: url('images/dustbin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 60px;
+    position: absolute;
+    left: 610px;
+    top: 230px;
+}
+
+
+/* Panel 2 */
+
+.bg2{
+    background: url('images/p2.png');
+}
+
+.mc2{
+    top: 120px;
+    left: 300px;
+}
+
+.left1{
+    left: 10px;
+    top: 200px;
+}
+
+.paint{
+    background-image: url('images/paint.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 90px;
+    top: 100px;
+    height: 100px;
+    width: 100px;
+}
+
+.textp{
+    top: 90px;
+    left: 280px;
+}
+.behind{
+    background-image: url('images/behind.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 90px;
+    top: 91px;
+    height: 118px;
+    width: 118px;
+}
+
+.paper{
+    background-image: url('images/paper.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 125px;
+    top: 160px;
+    height: 20px;
+    width: 30px;
+}
+
+.bigpaper{
+    background-image: url('images/bigpaper.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 70px;
+    left: 220px;
+    height: 200px;
+    width: 300px;
+}
+
+/*panel 3*/
+
+.bg3{
+    background: url('images/p3.png');
+}
+
+.left2{
+    top: 200px;
+    left: 10px;
+}
+
+.right{
+    background-image: url('images/right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 200px;
+    left: 710px;
+    height: 50px;
+    width: 80px;
+}
+
+.mc3{
+    top: 120px;
+    left: 450px;
+}
+
+.nerd{
+    background-image: url('images/nerd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 140px;
+    left: 140px;
+    height: 250px;
+    width: 100px;
+}
+
+.text4{
+    top: 50px;
+    left: 140px;
+}
+
+.form{
+    position: absolute;
+    top: 50px;
+    left: 140px;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+/* final panel */
+
+.end{
+    background:  url('images/end.gif');
+}
+
+.endcard{
+    background: url('images/endcard.png');
+}
+
+.goback{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    left: 350px;
+    top: 390px;
+    text-decoration: underline;
+    padding: 8px;
+}
+
+/* common */
+
+.bg{
+    position: absolute;
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.text{
+    border: black solid 1px;
+    border-radius: 5px;
+    width: 150px;
+    position: absolute;
+    background-color:white;
+    padding-left: 5px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.mc{
+    background-image: url('images/mc.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 140px;
+    position: absolute;
+}
+
+.left{
+    background-image: url('images/left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 50px;
+    width: 80px;
+}
+
+.login, .register{
+    margin: 30px;
+}
+
+h2, .ender{
+    color: white
+}

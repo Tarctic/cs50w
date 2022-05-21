@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}MiniGame{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'escape/styles.css' %} " rel="stylesheet" >
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://kit.fontawesome.com/543444084f.js" crossorigin="anonymous"></script>
+        <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <script type="text/javascript">
+          var csrf_token = "{{ csrf_token }}";
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'index' %}">Escape</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Log In</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
+              </div>
+              {% if user.is_authenticated %}
+              <span class="navbar-text ml-auto">Logged in as {{username}}</span>
+              {% endif %}
+              </div>
+        </nav>
+
+        {% block body %}
+        {% endblock %}
+        
+    </body>
+</html>
+

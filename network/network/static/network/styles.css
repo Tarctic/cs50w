@@ -1,0 +1,107 @@
+/*layout.html*/
+body{
+    background-color: rgb(32, 36, 39);
+    min-height: 100vh;
+}
+
+.navbar{
+    padding-left: 20px;
+    background-color: rgb(148, 0, 0);
+}
+
+.body{
+    padding: 20px;
+}
+.navbar-brand{
+    font-family: 'Blackadder ITC';
+    font-size: 30px;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.hr{
+    border:rgb(156, 19, 19) solid;
+}
+
+/*index.html*/
+.pager{
+    color:rgb(175, 0, 0);
+}
+
+/*newpost.html*/
+#newpost{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*post.js*/
+.card{
+    background-color: grey;
+    width: 35rem;
+}
+
+.card-top{
+    padding-top: 10px;
+}
+
+.poster{
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+.edit{
+    position: absolute;
+    left: 510px;
+    background-color: grey;
+    border-width: 0;
+}
+ 
+.like{
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+}
+
+.submit-textarea{
+    border-radius: 5px;
+    background-color: grey;
+    border: 1px solid rgb(32, 36, 39);
+}
+
+.creation{
+    text-align: right;
+    position: relative;
+    top: 30px;
+    font-size: small;
+    right: 10px;
+}
+
+/*profile.html*/
+.foll{
+    color: grey;
+}
+
+
+/*more than one*/
+
+a, .poster, .text{
+    color:rgb(148, 10, 10);
+}
+
+.submit{
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(148, 0, 0);
+    background-color: rgb(148, 0, 0);
+    color: white;
+}
+
+.submit:hover{
+    background-color: grey;
+    border-color:rgb(32, 36, 39);
+}
+
+.bottom-space{
+    margin-bottom: 220px;
+}

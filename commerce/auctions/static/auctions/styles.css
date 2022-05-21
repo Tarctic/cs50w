@@ -1,0 +1,71 @@
+body {
+    padding-left: 10px;
+    overflow-y: scroll;
+    background-color: white;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    background-color: black;
+    height: 100vh;
+    padding: 20px;
+}
+
+#leftbar, .nav-link{
+  -webkit-text-fill-color: white;
+}
+
+.blue{
+  border-width: 0px; 
+  background-color: rgb(46, 147, 255); 
+  border-radius: 5px; 
+  text-align: center; 
+  -webkit-text-fill-color: whitesmoke;
+}
+
+#rem{
+  position: relative;
+  left: 100px;
+  color: white;
+  border-radius: 5px;
+  border-width: 0px;
+  width: 40px;
+  height:35px;
+}
+
+.overflow{
+  height: 127px;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+#newbid{
+  height: 35px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+#comment{
+  height: 100px;
+  width: 800px;
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+.center{
+  text-align: center;
+}
+
+.sidenav{
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.newline{
+    white-space: pre-wrap;
+}

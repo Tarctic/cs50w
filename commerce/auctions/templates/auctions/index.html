@@ -1,0 +1,94 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>{{title}}</h2>
+    <h3>Active Listings</h3>
+    <div style="position: absolute; top:30px; right:100px">
+    Category:
+        <form name="category">
+            <select name="menu" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+                <option selected="selected">Select</option>
+                {% for cat in categories %}
+                <option value="{% url 'category' cat %}">{{cat}}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+    <hr>
+    <ul>
+        <div class="d-flex align-content-start flex-wrap">
+            {% for listing in alistings %}
+                <div class="p-2">
+                    <div class="card" style="width: 17rem;">
+                        {% if listing.img == None or listing.img == ''%}
+                        <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/3/3/2/7/237233-6-eng-GB/Cosmoprof-Asia-Ltd-SIC-Cosmetics-20132_news_large.jpg" class="card-img-top" alt="Image not available">
+                        {% else %}
+                        <img src={{listing.img}} class="card-img-top" height="150">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title" >{{listing.title}}</h5>
+                            <h6 class="card-subtitle mb-2">${{listing.bidnow}}</h6>
+                            {% if listing.desc|length > 150 %}
+                            <p class="card-text overflow newline">{{listing.desc}}</p>
+                            Read more...
+                            <br>
+                            {% else %}
+                            <p class="card-text" style="height: 150px;">{{listing.desc}}</p>
+                            {% endif %}
+                            <div class="d-flex flex-row">
+                                <div class="p-2">
+                                    <a href="{% url 'item' listing.id %}" class="btn btn-primary">Open</a>
+                                </div>
+                                <div class="p-2">
+                                    {% if remove %}
+                                    <form action="{% url 'wishlist' %}" method="POST">
+                                        {% csrf_token %}
+                                        <button id="rem" name="remove" value={{listing.id}}>
+                                            ❌
+                                        </button>
+                                    </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %} 
+            <li> No Listings available </li>
+            {% endfor %}
+        </div>
+    </ul>
+    <br>
+    <h3>Inactive Listings</h3>
+    <hr>
+    <ul>
+        <div class="d-flex align-content-start flex-wrap">
+            {% for listing in nalistings %}
+                <div class="p-2">
+                    <div class="card" style="width: 17rem;">
+                        {% if listing.img == None or listing.img == ''%}
+                        <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/3/3/2/7/237233-6-eng-GB/Cosmoprof-Asia-Ltd-SIC-Cosmetics-20132_news_large.jpg" class="card-img-top" alt="Image not available">
+                        {% else %}
+                        <img src={{listing.img}} class="card-img-top" height="150">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title" >{{listing.title}}</h5>
+                            <h6 class="card-subtitle mb-2">${{listing.bidnow}}</h6>
+                            {% if listing.desc|length > 150 %}
+                            <p class="card-text overflow">{{listing.desc}}</p>
+                            Read more...
+                            <br>
+                            {% else %}
+                            <p class="card-text" style="height: 150px;">{{listing.desc}}</p>
+                            {% endif %}
+                            <a href="{% url 'item' listing.id %}" class="btn btn-primary">Open</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+            <li> No Listings available </li>
+            {% endfor %}
+        </div>
+    </ul>
+
+{% endblock %}

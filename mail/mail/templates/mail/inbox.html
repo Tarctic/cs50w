@@ -1,0 +1,58 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <h2>{{ request.user.email }}</h2>
+
+    <button class="btn btn-sm btn-outline-primary" id="inbox">Inbox</button>
+    <button class="btn btn-sm btn-outline-primary" id="compose">Compose</button>
+    <button class="btn btn-sm btn-outline-primary" id="sent">Sent</button>
+    <button class="btn btn-sm btn-outline-primary" id="archived">Archived</button>
+    <a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
+    <hr>
+
+    <div id="emails-view">
+    </div>
+
+    <div id="compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <br>
+            <input type="submit" class="btn btn-primary"/>
+        </form>
+    </div>
+
+    <div class="card" id="email-data">
+        <button id="archive" class="icon"><i class="fas fa-archive"></i></button>
+        <div class="hover-div" id="archive-hover">Archive</div>
+        <button id="unarchive" class="icon"><i class="fas fa-box-open"></i></button>
+        <div class="hover-div" id="unarchive-hover">Unarchive</div>
+        <button id="delete" class="icon"><i class="fas fa-trash-alt"></i></button>
+        <div class="hover-div" style="margin-left: 22px">Delete</div>
+        <button id="mark-unread" class="icon"><i class="fas fa-envelope"></i></button>
+        <div class="hover-div" style="margin-left: 30px">Mark as unread</div>
+        <span id="email-timestamp"></span>
+        <br>
+        <h3 class="card-title" id="email-subject"></h3>
+        <p class="card-subtitle mb-2" id="email-sender"></p>
+        <p class="card-subtitle mb-2" id="email-recipients"></p>    
+        <p class="card-text" id="email-body"></p>
+        <button id="reply">Reply</button>
+    </div>
+
+{% endblock %}
+
