@@ -1,9 +1,9 @@
 # Wiki
 
+Online encyclopedia
+
 [YouTube](https://www.youtube.com/watch?v=1PAHIsfqCcs) |
 [Project Specification](https://cs50.harvard.edu/web/2020/projects/1/wiki/)
-
-Online encyclopedia
 
 Implements:
 - Search
