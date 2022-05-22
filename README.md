@@ -18,10 +18,10 @@ CS50's Web Programming with Python and JavaScript Projects
 
 ### How to run these projects on your computer:
 
-Project 0:
+**Project 0:**  
 Just download the code and open any one of the html files (advanced, googlebasic or image).
 
-Project 1-5:
+**Project 1-5:**
 - Make sure you have django (4.0 or above) and python (3 or above) installed on your computer (or venv)
 - Download the code
 - Open cmd and cd into the project directory where manage.py file lies
