@@ -5,7 +5,7 @@
 
 An imitation of Google Search, Google Image Search, and Google Advanced Search.
 
-Languages Used: 
+Uses: 
 - HTML
 - CSS
 - SCSS
