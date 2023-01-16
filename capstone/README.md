@@ -1,5 +1,23 @@
 # escape
 
+Point-and-click escape game
+
+[YouTube](https://www.youtube.com/watch?v=VIXXDsf2XkE) |
+[Project Specification](https://cs50.harvard.edu/web/2020/projects/final/capstone/)
+
+Implements:
+- Login System
+- New Game / Continue (saves progress)
+- The actual game ([More below](https://github.com/Tarctic/cs50w/tree/main/capstone#detailed-working-of-the-games-js-code))
+
+Uses:
+- Django
+- HTML
+- CSS
+- Python
+- JavaScript (React)
+
+---
 
 ### Introduction:
 
@@ -121,18 +139,6 @@ The ending displays a GIF with a timeout of 10 seconds matching the end of one l
 <img width="142" alt="image" src="https://user-images.githubusercontent.com/85291498/164957536-bbecf3b3-77bf-47a3-b83e-a63f81c6bf38.png">
 
 If a logged in user closes the game at any point, they can continue from where they left off the next time they play. This is thanks to the concept of panels. A POST request with a number indicating the progress is sent. POST requests are sent everytime anything significant to the progress of the game is encountered (such as obtaining the key). When the user clicks continue, the panel, that is, the background and objects relevant to their progress number is returned. If 'New Game' is clicked, the previous progress is overwritten by sending another POST request with '0' indicating that the user is playing from the beginning. 
-
----
-
-### How to run the application:
-
-**Walkthrough:** https://www.youtube.com/watch?v=VIXXDsf2XkE
-
-**Basic:** Make sure you have django, react, python installed. From cmd, go into main directory and run `python manage.py runserver`. In a new browser, go to https://127.0.0.1:8000
-
-**Log in:** You can either log in and play or play as an anonymous user. In the case of latter, progress will not be saved. If logged in, you can choose to start a New Game or Continue from where you left off. 
-
-**Gameplay:** On clicking New Game, a room is shown with a stickman kid and some objects. Clicking the dustbin gives you a key which is stored in the inventory at the bottom of the game window. Clicking on the key highlights it, showing that it is currently in use. While the key is highlighted, click on the left door. Stickman is now in a hallway with a painting on the wall, which when clicked moves to show a secret compartment behind it. When the piece of paper in the compartment is clicked, it is stored in the inventory. Clicking on the paper in the inventory reveals its contents, which is a word - 'PGBDYU'. Then, clicking on the left arrow key reveals another portion of the hallway, where a stickman with glasses stands. You cannot move past him without giving him the right answer. When 'PGBDYU' is entered, you are allowed to leave. Game over.
 
 ---
 
